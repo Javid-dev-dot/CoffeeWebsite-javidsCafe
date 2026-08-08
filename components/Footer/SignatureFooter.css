@@ -1,0 +1,416 @@
+/* ==========================================================================
+   JAVID'S CAFÉ — SIGNATURE FOOTER
+   ========================================================================== */
+
+.javids-footer {
+  position: relative;
+  width: 100%;
+  background-color: #0d0906;
+  color: #f3e9dc;
+  font-family:
+    "Manrope",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+  padding: clamp(3rem, 7vw, 4.5rem) clamp(1.4rem, 4vw, 3rem) 0;
+  overflow: hidden;
+  border-top: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.footer-ambient-glow {
+  position: absolute;
+  top: -15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60vw;
+  height: 40vh;
+  background: radial-gradient(
+    circle,
+    rgba(212, 175, 55, 0.1) 0%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ==========================================================================
+   TOP GRID
+   ========================================================================== */
+
+.footer-top {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1.6fr 0.8fr 1fr 1.1fr;
+  gap: clamp(1.75rem, 4vw, 3rem);
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-bottom: 3rem;
+}
+
+.footer-col-title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #d4af37;
+  margin: 0 0 1.1rem 0;
+}
+
+/* ---- Brand column ---- */
+
+.footer-brand-row {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  margin-bottom: 0.75rem;
+}
+
+.footer-crown {
+  font-size: 1.6rem;
+  color: #d4af37;
+  text-shadow: 0 0 12px rgba(212, 175, 55, 0.6);
+}
+
+.footer-brand-name {
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  margin: 0;
+  background: linear-gradient(135deg, #ffffff 0%, #e6c687 50%, #d4af37 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-brand-tag {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #a8947d;
+  margin: 0.2rem 0 0 0;
+}
+
+.footer-cup-signature {
+  width: 130px;
+  height: auto;
+  margin: 0.4rem 0 1rem -4px;
+  overflow: visible;
+}
+
+.footer-about-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #c4b5a2;
+  max-width: 34ch;
+  margin: 0 0 1.5rem 0;
+}
+
+.footer-social-row {
+  display: flex;
+  gap: 0.7rem;
+}
+
+.footer-social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(24, 18, 12, 0.7);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: #e6c687;
+  cursor: pointer;
+  text-decoration: none;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    color 0.25s ease;
+}
+
+.footer-social-btn svg {
+  width: 19px;
+  height: 19px;
+}
+
+.footer-social-btn:hover,
+.footer-social-btn:focus-visible {
+  background: rgba(212, 175, 55, 0.2);
+  border-color: #d4af37;
+  color: #ffffff;
+  box-shadow: 0 0 14px rgba(212, 175, 55, 0.35);
+}
+
+/* ---- Explore links column ---- */
+
+.footer-link-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.footer-link {
+  font-size: 0.88rem;
+  color: #d9c7b2;
+  text-decoration: none;
+  transition:
+    color 0.25s ease,
+    padding-left 0.25s ease;
+  position: relative;
+}
+
+.footer-link:hover,
+.footer-link:focus-visible {
+  color: #d4af37;
+  padding-left: 0.35rem;
+}
+
+/* ---- Visit / hours column ---- */
+
+.footer-address {
+  font-style: normal;
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: #d9c7b2;
+  margin: 0 0 1.3rem 0;
+}
+
+.footer-hours {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.footer-hours li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  font-size: 0.82rem;
+  border-bottom: 1px dashed rgba(212, 175, 55, 0.15);
+  padding-bottom: 0.5rem;
+}
+
+.hours-day {
+  color: #a8947d;
+}
+
+.hours-time {
+  color: #e6c687;
+  font-weight: 600;
+  font-family: ui-monospace, SFMono-Regular, monospace;
+  font-size: 0.78rem;
+}
+
+/* ---- Newsletter column ---- */
+
+.footer-newsletter-copy {
+  font-size: 0.86rem;
+  line-height: 1.6;
+  color: #c4b5a2;
+  margin: 0 0 1.1rem 0;
+}
+
+.footer-newsletter-form {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.footer-newsletter-input {
+  flex: 1;
+  min-width: 0;
+  background: rgba(8, 6, 4, 0.6);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: 20px;
+  padding: 0.6rem 1rem;
+  font-size: 0.82rem;
+  color: #f3e9dc;
+  outline: none;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.footer-newsletter-input::placeholder {
+  color: #7a6a58;
+}
+
+.footer-newsletter-input:focus-visible {
+  border-color: #d4af37;
+  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.18);
+}
+
+.footer-newsletter-btn {
+  flex-shrink: 0;
+  background: linear-gradient(135deg, #d4af37 0%, #ff9e2c 100%);
+  border: none;
+  color: #080604;
+  font-weight: 700;
+  font-size: 0.8rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.3);
+}
+
+.footer-subscribed-note {
+  font-size: 0.78rem;
+  color: #d4af37;
+  margin: 0.7rem 0 0 0;
+}
+
+/* ==========================================================================
+   DIVIDER
+   ========================================================================== */
+
+.footer-divider {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(212, 175, 55, 0.35) 50%,
+    transparent 100%
+  );
+}
+
+/* ==========================================================================
+   BOTTOM BAR
+   ========================================================================== */
+
+.footer-bottom {
+  position: relative;
+  z-index: 1;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.4rem 0 1.6rem;
+}
+
+.footer-copyright {
+  font-size: 0.76rem;
+  color: #7a6a58;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.footer-legal-links {
+  list-style: none;
+  display: flex;
+  gap: 1.4rem;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-legal-links a {
+  font-size: 0.76rem;
+  color: #a8947d;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+.footer-legal-links a:hover,
+.footer-legal-links a:focus-visible {
+  color: #d4af37;
+}
+
+.footer-to-top-btn {
+  flex-shrink: 0;
+  background: rgba(24, 18, 12, 0.8);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  color: #e6c687;
+  font-size: 0.76rem;
+  font-weight: 700;
+  padding: 0.45rem 0.95rem;
+  border-radius: 20px;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+.footer-to-top-btn:hover,
+.footer-to-top-btn:focus-visible {
+  background: #d4af37;
+  color: #080604;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 1024px) {
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 2.75rem;
+  }
+
+  .footer-about-text {
+    max-width: 44ch;
+  }
+}
+
+@media (max-width: 640px) {
+  .javids-footer {
+    padding: 3.5rem 1.4rem 0;
+  }
+
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .footer-about-text {
+    max-width: none;
+  }
+
+  .footer-cup-signature {
+    width: 110px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .footer-legal-links {
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-newsletter-form {
+    flex-direction: column;
+  }
+
+  .footer-newsletter-btn {
+    width: 100%;
+  }
+}
+
+/* Respect reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .footer-social-btn,
+  .footer-to-top-btn,
+  .footer-newsletter-btn,
+  .footer-link {
+    transition: none;
+  }
+}

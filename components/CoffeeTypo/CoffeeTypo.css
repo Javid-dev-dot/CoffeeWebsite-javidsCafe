@@ -1,0 +1,61 @@
+/* 🎨 General coffee theme colors */
+.text-coffee-light {
+  color: #c0a080; /* warm latte tone */
+}
+
+.text-coffee-dark {
+  color: #6f4e37; /* deep coffee brown */
+}
+
+/* 🖼 Section wrapper */
+.coffee-section {
+  background-color: #1c1c1c; /* dark background for contrast */
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
+  position: relative;
+  padding: 2rem 0;
+}
+
+/* ✨ Hero intro (smaller height) */
+.hero-intro {
+  height: 40vh; /* smaller than full screen */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  color: #c0a080;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+/* 🅰️ Heading styles */
+.coffee_title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: #c0a080;
+  text-transform: uppercase;
+  text-align: center;
+  line-height: 0.9;
+}
+
+.coffee-target {
+  display: inline-block; /* required for GSAP transforms */
+  will-change: transform, opacity;
+}
+
+/* 📖 Paragraph styles */
+.coffee_paragraph {
+  font-family: "Inter", sans-serif;
+  font-size: 1.35rem;
+  line-height: 1.7;
+  color: #c0a080;
+  text-align: center;
+  max-width: 42rem;
+  margin: 1.5rem auto;
+  will-change: transform, opacity;
+  text-transform: uppercase;
+}

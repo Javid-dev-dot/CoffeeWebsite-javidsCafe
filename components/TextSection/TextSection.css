@@ -1,0 +1,109 @@
+.main {
+  position: relative;
+  height: 100vh;
+  min-height: 560px;
+  overflow: hidden;
+  background: #0f0c0a;
+}
+
+.main .mask,
+.main .body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+  color: #afa18f;
+  font-size: clamp(28px, 5.4vw, 64px);
+  line-height: 1.06;
+  cursor: default;
+}
+
+.main .mask p,
+.main .body p {
+  width: min(1000px, 92vw);
+  padding: clamp(16px, 4vw, 40px);
+  text-align: center;
+  margin: 0;
+}
+
+.main .body span {
+  color: #ec4e39;
+}
+
+/* -------- the cursor-revealed layer -------- */
+/* --mask-x / --mask-y / --mask-size are written by useMagneticMask via GSAP */
+.main .mask {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  color: #0f0c0a;
+  background: #ec4e39;
+
+  --mask-x: -999px;
+  --mask-y: -999px;
+  --mask-size: 44px;
+
+  -webkit-mask-image: url("/assets/Coffee.svg");
+  mask-image: url("/assets/Coffee.svg");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: var(--mask-x) var(--mask-y);
+  mask-position: var(--mask-x) var(--mask-y);
+  -webkit-mask-size: var(--mask-size);
+  mask-size: var(--mask-size);
+  will-change: mask-position, mask-size;
+}
+
+.main .body {
+  position: relative;
+  z-index: 1;
+}
+
+/* Soft ambient glow behind the reveal so it doesn't feel like a flat cutout */
+.main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: radial-gradient(
+    60% 50% at 50% 45%,
+    rgba(236, 78, 57, 0.06),
+    transparent 70%
+  );
+}
+
+/* -------- touch fallback -------- */
+.touchCaption {
+  position: absolute;
+  left: 50%;
+  bottom: clamp(20px, 6vh, 56px);
+  transform: translateX(-50%);
+  z-index: 2;
+  width: min(560px, 88vw);
+  text-align: center;
+  margin: 0;
+  padding: 12px 20px;
+  border-radius: 999px;
+  color: #ec4e39;
+  font-size: clamp(13px, 3.4vw, 16px);
+  line-height: 1.4;
+  background: rgba(236, 78, 57, 0.08);
+  border: 1px solid rgba(236, 78, 57, 0.25);
+}
+
+@media (max-width: 640px) {
+  .main .mask,
+  .main .body {
+    padding: 0 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .main .mask {
+    -webkit-mask-position: 50% 50%;
+    mask-position: 50% 50%;
+  }
+}

@@ -1,0 +1,315 @@
+/* =====================================================
+   JOURNEY SECTION
+   ===================================================== */
+
+.journey-section {
+  position: relative;
+  background: #0c0704;
+  padding: clamp(80px, 10vw, 160px) 0;
+  overflow: hidden;
+}
+
+.journey-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201, 162, 39, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Header */
+.journey-header {
+  text-align: center;
+  padding: 0 24px;
+  margin-bottom: clamp(60px, 10vw, 120px);
+  position: relative;
+  z-index: 2;
+}
+
+.journey-header__eyebrow {
+  display: inline-block;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #c9a227;
+  margin-bottom: 18px;
+  background: rgba(201, 162, 39, 0.1);
+  padding: 6px 18px;
+  border-radius: 100px;
+  border: 1px solid rgba(201, 162, 39, 0.2);
+}
+
+.journey-header__title {
+  font-size: clamp(38px, 6vw, 80px);
+  font-weight: 700;
+  color: #f3e9d8;
+  letter-spacing: -0.03em;
+  line-height: 1.05;
+  font-family: 'Fraunces', 'Georgia', serif;
+  margin-bottom: 16px;
+}
+
+.journey-header__title em {
+  font-style: italic;
+  color: #c9a227;
+}
+
+.journey-header__sub {
+  font-size: clamp(14px, 1.8vw, 18px);
+  color: rgba(243, 233, 216, 0.55);
+  max-width: 500px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Spine */
+.journey-spine {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 4px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.journey-spine-svg {
+  display: block;
+  width: 100%;
+}
+
+.journey-spine-progress {
+  transform: scaleY(0);
+  transform-origin: top center;
+}
+
+/* Steps container */
+.journey-steps {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Row layout */
+.journey-row {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 0 24px;
+  align-items: center;
+  margin-bottom: clamp(60px, 10vw, 120px);
+  position: relative;
+}
+
+.journey-row--left .journey-card {
+  grid-column: 1;
+  grid-row: 1;
+}
+.journey-row--left .journey-spine-dot {
+  grid-column: 2;
+  grid-row: 1;
+}
+.journey-row--left .journey-image-wrap {
+  grid-column: 3;
+  grid-row: 1;
+}
+
+.journey-row--right .journey-card {
+  grid-column: 3;
+  grid-row: 1;
+}
+.journey-row--right .journey-spine-dot {
+  grid-column: 2;
+  grid-row: 1;
+}
+.journey-row--right .journey-image-wrap {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+/* Spine Dot */
+.journey-spine-dot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  justify-self: center;
+  position: relative;
+}
+
+.journey-spine-dot-inner {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #c9a227;
+  box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.2), 0 0 20px rgba(201, 162, 39, 0.4);
+  position: relative;
+  z-index: 3;
+}
+
+.journey-spine-year {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: rgba(201, 162, 39, 0.7);
+  text-transform: uppercase;
+}
+
+/* Card */
+.journey-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(201, 162, 39, 0.12);
+  border-radius: 20px;
+  padding: clamp(24px, 3vw, 40px);
+  position: relative;
+  backdrop-filter: blur(10px);
+  overflow: hidden;
+  transition: border-color 0.4s ease, background 0.4s ease;
+}
+
+.journey-card:hover {
+  border-color: rgba(201, 162, 39, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.journey-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(201, 162, 39, 0.5), transparent);
+}
+
+.journey-card__icon-badge {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: rgba(201, 162, 39, 0.1);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+  color: #c9a227;
+}
+
+.journey-card__icon {
+  width: 28px;
+  height: 28px;
+}
+
+.journey-card__icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.journey-card__tag {
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: rgba(201, 162, 39, 0.75);
+  margin-bottom: 10px;
+}
+
+.journey-card__title {
+  font-size: clamp(20px, 2.5vw, 30px);
+  font-weight: 700;
+  color: #f3e9d8;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-family: 'Fraunces', 'Georgia', serif;
+}
+
+.journey-card__body {
+  font-size: clamp(13px, 1.5vw, 16px);
+  color: rgba(243, 233, 216, 0.6);
+  line-height: 1.7;
+}
+
+.journey-card__line {
+  margin-top: 24px;
+  height: 2px;
+  background: linear-gradient(to right, #c9a227, rgba(201, 162, 39, 0));
+  border-radius: 1px;
+  transform-origin: left center;
+}
+
+/* Image */
+.journey-image-wrap {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+}
+
+.journey-image-inner {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+
+.journey-image-label {
+  position: absolute;
+  bottom: 16px;
+  left: 16px;
+  font-size: 10px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(243, 233, 216, 0.8);
+  background: rgba(12, 7, 4, 0.6);
+  padding: 4px 12px;
+  border-radius: 100px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(201, 162, 39, 0.2);
+  z-index: 2;
+}
+
+/* Mobile */
+@media (max-width: 900px) {
+  .journey-spine {
+    left: 24px;
+    transform: none;
+  }
+
+  .journey-row {
+    display: flex;
+    flex-direction: column;
+    padding-left: 64px;
+    gap: 20px;
+  }
+
+  .journey-spine-dot {
+    position: absolute;
+    left: -52px;
+    top: 30px;
+    flex-direction: row;
+  }
+
+  .journey-row--right .journey-card,
+  .journey-row--left .journey-card {
+    order: 2;
+  }
+
+  .journey-row--right .journey-image-wrap,
+  .journey-row--left .journey-image-wrap {
+    order: 1;
+    height: 240px;
+  }
+
+  .journey-image-inner {
+    position: relative;
+    height: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .journey-image-wrap {
+    aspect-ratio: 16/9;
+  }
+}

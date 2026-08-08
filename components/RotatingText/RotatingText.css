@@ -1,0 +1,59 @@
+.text-rotate {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  white-space: pre-wrap;
+  position: relative;
+  font-family: "Fraunces", serif;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  background: linear-gradient(135deg, #c9a227 0%, #e7c766 55%, #a6532b 100%);
+  color: #120d0a;
+  box-shadow:
+    0 6px 24px rgba(201, 162, 39, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+}
+
+.text-rotate-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.text-rotate-word {
+  display: inline-flex;
+}
+
+.text-rotate-lines {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.text-rotate-element {
+  display: inline-block;
+}
+
+.text-rotate-space {
+  white-space: pre;
+}
+
+/* Responsive scale-down for the pill on narrow viewports */
+@media (max-width: 640px) {
+  .text-rotate {
+    letter-spacing: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-rotate * {
+    transition: none !important;
+  }
+}

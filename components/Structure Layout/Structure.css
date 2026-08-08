@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Merriweather:wght@700&family=Montserrat:wght@600&family=Lora:wght@400&family=Poppins:wght@500&family=Inter:wght@400&family=Dancing+Script:wght@400&display=swap");
+/* Import Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Merriweather:wght@700&family=Montserrat:wght@600&family=Lora:wght@400&family=Poppins:wght@500&family=Inter:wght@400&family=Dancing+Script:wght@400&display=swap");
+
+/* Default body font */
+body {
+  font-family: "Inter", sans-serif;
+}
+
+/* Custom font utility classes */
+.font-logo {
+  font-family: "Playfair Display", serif;
+}
+
+.font-hero {
+  font-family: "Merriweather", serif;
+}
+
+.font-menu {
+  font-family: "Montserrat", sans-serif;
+}
+
+.font-description {
+  font-family: "Lora", serif;
+}
+
+.font-button {
+  font-family: "Poppins", sans-serif;
+}
+
+.font-nav {
+  font-family: "Inter", sans-serif;
+}
+
+.font-accent {
+  font-family: "Dancing Script", cursive;
+}

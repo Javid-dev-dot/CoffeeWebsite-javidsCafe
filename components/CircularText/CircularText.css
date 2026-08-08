@@ -1,0 +1,44 @@
+.jc-circular-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 4px 14px rgba(201, 162, 39, 0.25));
+}
+
+.jc-badge-ring-outline {
+  fill: none;
+  stroke: rgba(201, 162, 39, 0.35);
+  stroke-width: 1;
+}
+
+.jc-badge-text {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 8.5px;
+  letter-spacing: 0.15em;
+  fill: #f3e9d8;
+  text-transform: uppercase;
+}
+
+.jc-badge-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+/* Respect reduced motion: freeze the ring, keep the mark legible */
+@media (prefers-reduced-motion: reduce) {
+  .jc-circular-badge svg {
+    animation: none !important;
+  }
+}
+
+/* Shrink gracefully on very small screens when used inline in the hero */
+@media (max-width: 480px) {
+  .jc-circular-badge {
+    transform: scale(0.82);
+  }
+}

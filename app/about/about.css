@@ -1,0 +1,9 @@
+/* About page layout */
+.about-page {
+  background: #0c0704;
+  overflow-x: hidden;
+}
+
+.about-page main {
+  position: relative;
+}

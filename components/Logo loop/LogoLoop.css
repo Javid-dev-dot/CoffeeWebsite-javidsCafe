@@ -1,0 +1,274 @@
+.logoloop {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 18px;
+  padding: 18px 0;
+  background:
+    radial-gradient(
+      120% 140% at 50% -20%,
+      rgba(201, 138, 75, 0.08),
+      transparent 60%
+    ),
+    linear-gradient(180deg, #1b120c 0%, #140d08 100%);
+  border: 1px solid rgba(201, 138, 75, 0.16);
+
+  --logoloop-gap: 40px;
+  --logoloop-logoHeight: 30px;
+  --logoloop-fadeColorAuto: #140d08;
+  --logoloop-brass: #c98a4b;
+  --logoloop-cream: #f3e8da;
+}
+
+.logoloop--vertical {
+  height: 100%;
+  display: inline-block;
+}
+
+.logoloop--scale-hover {
+  padding-top: calc(var(--logoloop-logoHeight) * 0.4);
+  padding-bottom: calc(var(--logoloop-logoHeight) * 0.4);
+}
+
+@media (prefers-color-scheme: light) {
+  .logoloop {
+    --logoloop-fadeColorAuto: #140d08;
+  }
+}
+
+/* ---------- cursor spotlight (Framer Motion positions this) ---------- */
+.logoloop__spotlight {
+  position: absolute;
+  width: 420px;
+  height: 420px;
+  margin-left: -210px;
+  margin-top: -210px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(
+    circle,
+    rgba(201, 138, 75, 0.16) 0%,
+    rgba(201, 138, 75, 0.05) 45%,
+    transparent 72%
+  );
+  filter: blur(2px);
+}
+
+/* ---------- track & list ---------- */
+.logoloop__track {
+  display: flex;
+  width: max-content;
+  will-change: transform;
+  user-select: none;
+  position: relative;
+  z-index: 2;
+}
+
+.logoloop--vertical .logoloop__track {
+  flex-direction: column;
+  height: max-content;
+  width: 100%;
+}
+
+.logoloop__list {
+  display: flex;
+  align-items: center;
+}
+
+.logoloop--vertical .logoloop__list {
+  flex-direction: column;
+}
+
+.logoloop__item {
+  flex: 0 0 auto;
+  margin-right: var(--logoloop-gap);
+  font-size: var(--logoloop-logoHeight);
+  line-height: 1;
+  display: flex;
+  align-items: center;
+}
+
+.logoloop--vertical .logoloop__item {
+  margin-right: 0;
+  margin-bottom: var(--logoloop-gap);
+}
+
+.logoloop__item:last-child {
+  margin-right: var(--logoloop-gap);
+}
+
+.logoloop--vertical .logoloop__item:last-child {
+  margin-right: 0;
+  margin-bottom: var(--logoloop-gap);
+}
+
+.logoloop__node {
+  display: inline-flex;
+  align-items: center;
+}
+
+.logoloop__item img {
+  height: var(--logoloop-logoHeight);
+  width: auto;
+  display: block;
+  object-fit: contain;
+  filter: grayscale(1) brightness(1.6) contrast(0.9) opacity(0.55);
+  image-rendering: -webkit-optimize-contrast;
+  -webkit-user-drag: none;
+  pointer-events: none;
+  transition:
+    filter 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.logoloop--scale-hover .logoloop__item:hover img {
+  filter: grayscale(0) brightness(1) contrast(1) opacity(1);
+  transform: translateY(-2px) scale(1.08);
+}
+
+.logoloop--scale-hover .logoloop__item {
+  overflow: visible;
+}
+
+.logoloop__link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.logoloop__link:focus-visible {
+  outline: 2px solid var(--logoloop-brass);
+  outline-offset: 3px;
+}
+
+/* ---------- Javid's Cafe woven badge ---------- */
+.logoloop__item--brand {
+  margin-right: calc(var(--logoloop-gap) * 1.1);
+}
+
+.logoloop__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 20px 9px 14px;
+  border-radius: 999px;
+  border: 1px solid rgba(201, 138, 75, 0.35);
+  background: linear-gradient(
+    135deg,
+    rgba(201, 138, 75, 0.14),
+    rgba(201, 138, 75, 0.03)
+  );
+  color: var(--logoloop-cream);
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+}
+
+.logoloop__badge::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    transparent 20%,
+    rgba(243, 232, 218, 0.22) 45%,
+    transparent 70%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.9s ease;
+}
+
+.logoloop__item--brand:hover .logoloop__badge::before {
+  transform: translateX(120%);
+}
+
+.logoloop__cup {
+  width: calc(var(--logoloop-logoHeight) * 0.62);
+  height: calc(var(--logoloop-logoHeight) * 0.62);
+  color: var(--logoloop-brass);
+  flex: 0 0 auto;
+}
+
+.logoloop__badgeText {
+  font-family: "Fraunces", "Playfair Display", Georgia, serif;
+  font-weight: 560;
+  font-style: italic;
+  font-size: calc(var(--logoloop-logoHeight) * 0.62);
+  letter-spacing: 0.01em;
+  color: var(--logoloop-cream);
+}
+
+/* ---------- edge fade ---------- */
+.logoloop--fade::before,
+.logoloop--fade::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: clamp(32px, 12%, 140px);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.logoloop--fade::before {
+  left: 0;
+  background: linear-gradient(
+    to right,
+    var(--logoloop-fadeColor, var(--logoloop-fadeColorAuto)) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.logoloop--fade::after {
+  right: 0;
+  background: linear-gradient(
+    to left,
+    var(--logoloop-fadeColor, var(--logoloop-fadeColorAuto)) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.logoloop--vertical.logoloop--fade::before,
+.logoloop--vertical.logoloop--fade::after {
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: clamp(32px, 12%, 140px);
+}
+
+.logoloop--vertical.logoloop--fade::before {
+  top: 0;
+  bottom: auto;
+  background: linear-gradient(
+    to bottom,
+    var(--logoloop-fadeColor, var(--logoloop-fadeColorAuto)) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.logoloop--vertical.logoloop--fade::after {
+  bottom: 0;
+  top: auto;
+  background: linear-gradient(
+    to top,
+    var(--logoloop-fadeColor, var(--logoloop-fadeColorAuto)) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logoloop__track {
+    transform: translate3d(0, 0, 0) !important;
+  }
+
+  .logoloop__item img,
+  .logoloop__badge::before {
+    transition: none !important;
+  }
+
+  .logoloop__spotlight {
+    display: none;
+  }
+}
