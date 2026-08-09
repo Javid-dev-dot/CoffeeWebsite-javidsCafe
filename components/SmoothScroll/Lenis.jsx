@@ -34,7 +34,7 @@ export default function SmoothScrollProvider({ children }) {
         smoothTouch: true, // smoother mobile scroll
       }}
     >
-      {children}
+      <div style={{ width: "100%", overflowX: "hidden" }}>{children}</div>
     </ReactLenis>
   );
 }

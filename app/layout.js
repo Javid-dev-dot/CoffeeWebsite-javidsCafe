@@ -17,6 +17,7 @@ export const metadata = {
   description: "Handcrafted coffee, cozy vibes, and delicious treats.",
   keywords: ["coffee", "cafe", "espresso", "latte", "Javid's Cafe"],
   authors: [{ name: "Javid’s Café" }],
+  viewport: "width=device-width, initial-scale=1.0", // ✅ Added viewport
   openGraph: {
     title: "Javid’s Café",
     description: "Freshly brewed coffee and cozy vibes.",
