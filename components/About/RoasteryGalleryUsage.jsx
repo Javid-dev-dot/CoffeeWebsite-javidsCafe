@@ -4,7 +4,7 @@ import RoasteryGallery from "@/components/About/RoasteryGallery";
 const items = [
   {
     id: 1,
-    img: "/assets/LandingCafe.jpg",
+    img: "/assets/insidecafe1.jpg",
     url: "#",
     width: 300,
     height: 380,
@@ -79,7 +79,13 @@ const items = [
 export default function RoasteryGalleryUsage() {
   return (
     <section
-      style={{ width: "100%", minHeight: "100vh", background: "#0d0906" }}
+      style={{
+        width: "100%",
+        minHeight: "100vh",
+        background: "#0d0906",
+        overflowX: "hidden", // prevents horizontal overflow
+        position: "relative", // ensures children respect boundaries
+      }}
     >
       <RoasteryGallery
         items={items}
