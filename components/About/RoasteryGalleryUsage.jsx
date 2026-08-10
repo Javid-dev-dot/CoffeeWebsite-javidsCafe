@@ -4,74 +4,50 @@ import RoasteryGallery from "@/components/About/RoasteryGallery";
 const items = [
   {
     id: 1,
-    img: "/assets/insidecafe1.jpg",
-    url: "#",
-    width: 300,
-    height: 380,
+    img: "/assets/insidecafe.jpg",
     title: "The Dining Room",
     tag: "Interior",
   },
   {
     id: 2,
-    img: "/assets/Cappuccino.png",
-    url: "#",
-    width: 250,
-    height: 300,
+    img: "/assets/card1.jpg",
     title: "Signature Cappuccino",
     tag: "On the Menu",
   },
   {
     id: 3,
-    img: "/assets/insidecafe2.jpg",
-    url: "#",
-    width: 280,
-    height: 340,
+    img: "/assets/night.jpg",
     title: "Morning Light",
     tag: "Interior",
   },
   {
     id: 4,
-    img: "/assets/LatteeArt.jpeg",
-    url: "#",
-    width: 260,
-    height: 320,
-    title: "Latte Art",
+    img: "/assets/Pixelcafe.webp",
+    title: "Cafe Pixel Art",
     tag: "Craft",
   },
   {
     id: 5,
-    img: "/assets/coffeejavid1.png",
-    url: "#",
-    width: 300,
-    height: 260,
+    img: "/assets/LogoCoffee.jpeg",
     title: "Single-Origin Pour",
     tag: "Roastery",
   },
   {
     id: 6,
-    img: "/assets/Americano.png",
-    url: "#",
-    width: 240,
-    height: 300,
-    title: "Americano",
+    img: "/assets/coffeecolors.jpg",
+    title: "Colors of Coffee",
     tag: "On the Menu",
   },
   {
     id: 7,
     img: "/assets/cafe2.jpg",
-    url: "#",
-    width: 280,
-    height: 360,
     title: "The Counter",
     tag: "Interior",
   },
   {
     id: 8,
-    img: "/assets/Latte.png",
-    url: "#",
-    width: 250,
-    height: 300,
-    title: "Classic Latte",
+    img: "/assets/Landing.webp",
+    title: "Landing Page Design",
     tag: "On the Menu",
   },
 ];
@@ -83,18 +59,13 @@ export default function RoasteryGalleryUsage() {
         width: "100%",
         minHeight: "100vh",
         background: "#0d0906",
-        overflowX: "hidden", // prevents horizontal overflow
-        position: "relative", // ensures children respect boundaries
+        overflowX: "hidden",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
       }}
     >
-      <RoasteryGallery
-        items={items}
-        animateFrom="bottom"
-        scaleOnHover
-        hoverScale={0.97}
-        blurToFocus
-        gap={10}
-      />
+      <RoasteryGallery items={items} />
     </section>
   );
 }
