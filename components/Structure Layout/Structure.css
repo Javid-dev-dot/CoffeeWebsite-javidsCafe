@@ -7,6 +7,52 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.premium-brand-strip {
+  display: flex;
+  justify-content: center;
+}
+
+.premium-brand-inner {
+  width: min(1100px, 100%);
+  padding: 1.8rem 1.5rem;
+  border: 1px solid rgba(212, 175, 55, 0.14);
+  border-radius: 1.6rem;
+  background: linear-gradient(
+    135deg,
+    rgba(25, 19, 14, 0.85),
+    rgba(12, 10, 7, 0.9)
+  );
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.28);
+  text-align: center;
+}
+
+.premium-brand-kicker {
+  display: inline-block;
+  margin-bottom: 0.7rem;
+  color: #d4af37;
+  font-size: 0.68rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  font-family: "Space Mono", monospace;
+}
+
+.premium-brand-inner h2 {
+  margin: 0;
+  font-size: clamp(1.8rem, 4vw, 3.2rem);
+  font-family: "Playfair Display", serif;
+  color: #f5efe6;
+  letter-spacing: -0.04em;
+}
+
+.premium-brand-inner p {
+  max-width: 760px;
+  margin: 0.95rem auto 0;
+  color: rgba(245, 239, 230, 0.74);
+  font-size: 1rem;
+  line-height: 1.7;
+  font-family: "Inter", sans-serif;
+}
+
 /* Custom font utility classes */
 .font-logo {
   font-family: "Playfair Display", serif;

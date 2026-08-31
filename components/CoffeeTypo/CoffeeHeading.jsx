@@ -8,24 +8,49 @@ gsap.registerPlugin(ScrollTrigger);
 
 const CoffeeHeading = () => {
   useEffect(() => {
-    const split = new SplitType(".coffee-target", { types: "chars" });
+    const split = new SplitType(".coffee-target", {
+      types: "chars",
+      tagName: "span",
+      charClass: "coffee-char",
+    });
     const chars = split.chars;
 
-    gsap.from(chars, {
-      opacity: 0,
-      y: 80,
-      rotateX: -90,
-      transformOrigin: "center center",
-      ease: "expo.out",
-      duration: 1.2,
-      stagger: 0.05,
-      scrollTrigger: {
-        trigger: ".coffee_title",
-        start: "top 80%",
-        end: "bottom 60%",
-        scrub: true,
-      },
+    chars.forEach((char) => {
+      char.style.display = "inline-block";
+      char.style.color = "transparent";
+      char.style.background =
+        "linear-gradient(135deg, #f5efe6 0%, #d4af37 60%, #ff9e2c 100%)";
+      char.style.WebkitBackgroundClip = "text";
+      char.style.backgroundClip = "text";
+      char.style.WebkitTextFillColor = "transparent";
     });
+
+    gsap.fromTo(
+      chars,
+      {
+        opacity: 0,
+        y: 80,
+        rotateX: -90,
+        transformOrigin: "center center",
+      },
+      {
+        opacity: 1,
+        y: 0,
+        rotateX: 0,
+        ease: "expo.out",
+        duration: 1.2,
+        stagger: 0.05,
+        scrollTrigger: {
+          trigger: ".coffee_title",
+          start: "top 80%",
+          once: true,
+        },
+      },
+    );
+
+    return () => {
+      split.revert();
+    };
   }, []);
 
   return (

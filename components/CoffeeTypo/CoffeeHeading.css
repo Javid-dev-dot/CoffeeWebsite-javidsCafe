@@ -1,14 +1,19 @@
 .coffee_title {
-  font-family: "Poppins", sans-serif;
-  font-weight: 800;
-  letter-spacing: 0.05em;
+  font-family: var(--font-display, "Fraunces", serif);
+  font-weight: 700;
+  letter-spacing: 0.04em;
   text-transform: uppercase;
-  color: #c0a080; /* latte tone */
+  color: transparent;
+  background: linear-gradient(135deg, #f5efe6 0%, #d4af37 60%, #ff9e2c 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   text-align: center;
-  line-height: 0.9;
+  line-height: 0.95;
 }
 
 .coffee-target {
   display: inline-block; /* required for GSAP transforms */
+  opacity: 1;
   will-change: transform, opacity;
 }

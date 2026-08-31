@@ -1032,54 +1032,127 @@
 /* ==========================================================================
    Responsive Media Queries
    ========================================================================== */
+@media (max-width: 1180px) {
+  .reserve-body {
+    gap: 2.5rem;
+  }
+}
+
 @media (max-width: 1024px) {
   .reserve-body {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
+  .reserve-section {
+    padding: 4rem 1.25rem 5rem;
+  }
+  .coffee-image {
+    width: 12rem;
+    height: 12rem;
+  }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 768px) {
   .reserve-section {
     padding: 3.5rem 1rem 4rem;
   }
+  .reserve-header {
+    margin: 0 auto 2.5rem;
+  }
   .reserve-title {
-    font-size: 2.2rem;
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
   }
   .reserve-tabs {
     width: 100%;
     overflow-x: auto;
     justify-content: flex-start;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
   .tab-btn {
-    padding: 0.5rem 1rem;
+    padding: 0.55rem 1rem;
     font-size: 0.8rem;
     white-space: nowrap;
   }
   .pedestal-card {
-    padding: 1.75rem 1rem 1.5rem;
+    padding: 2rem 1.25rem 1.6rem;
   }
   .coffee-image {
-    width: 10rem;
-    height: 10rem;
+    width: 10.5rem;
+    height: 10.5rem;
   }
   .coffee-image-stage {
-    height: 190px;
+    height: 200px;
   }
   .coffee-name {
     font-size: 1.6rem;
   }
   .gauge-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .menu-row {
+    padding: 0.9rem 0.8rem;
+  }
+  .row-name {
+    font-size: 1.05rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .reserve-section {
+    padding: 3rem 0.75rem 3.5rem;
+  }
+  .reserve-title {
+    font-size: 1.8rem;
+  }
+  .pedestal-card {
+    padding: 1.6rem 0.9rem 1.3rem;
+  }
+  .coffee-image {
+    width: 9rem;
+    height: 9rem;
+  }
+  .coffee-image-stage {
+    height: 175px;
+  }
+  .seal {
+    width: 86px;
+    height: 86px;
+  }
+  .coffee-name {
+    font-size: 1.4rem;
+  }
+  .gauge-grid {
     grid-template-columns: 1fr;
+  }
+  .coffee-description {
+    font-size: 0.95rem;
+  }
+  .modal-content {
+    padding: 1.6rem 1.1rem 1.4rem;
   }
   .modal-specs-grid {
     grid-template-columns: 1fr 1fr;
   }
+  .modal-title {
+    font-size: 1.4rem;
+  }
   .modal-footer {
     flex-direction: column;
     align-items: stretch;
+    gap: 1rem;
   }
   .btn-modal-confirm {
     width: 100%;
+  }
+  .option-buttons {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .steam-ray,
+  .gold-mote {
+    animation: none !important;
   }
 }

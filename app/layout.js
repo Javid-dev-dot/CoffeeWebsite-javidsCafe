@@ -12,16 +12,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1.0,
+  themeColor: "#0a0807",
+};
+
 export const metadata = {
+  metadataBase: new URL("https://javidscafe.com"),
   title: "Javid’s Café | Freshly Brewed Happiness",
   description: "Handcrafted coffee, cozy vibes, and delicious treats.",
   keywords: ["coffee", "cafe", "espresso", "latte", "Javid's Cafe"],
   authors: [{ name: "Javid’s Café" }],
-  viewport: "width=device-width, initial-scale=1.0", // ✅ Added viewport
   openGraph: {
     title: "Javid’s Café",
     description: "Freshly brewed coffee and cozy vibes.",
-    url: "https://yourwebsite.com",
+    url: "https://javidscafe.com",
     siteName: "Javid’s Café",
     images: [
       {

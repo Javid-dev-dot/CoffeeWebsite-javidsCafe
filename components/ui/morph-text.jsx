@@ -1,4 +1,4 @@
-"use client";;
+"use client";
 import React, { useId } from "react";
 import { cn } from "@/lib/utils";
 
@@ -12,7 +12,7 @@ export function MorphText({
   fontFamily = '"Space Grotesk", sans-serif',
   className,
   textClassName,
-  subtextClassName
+  subtextClassName,
 }) {
   // Unique ID so multiple instances don't share filter IDs
   const uid = useId().replace(/:/g, "");
@@ -29,36 +29,52 @@ export function MorphText({
 
   return (
     <div
-      className={cn("morph-text-root relative flex flex-col items-center", className)}>
+      className={cn(
+        "morph-text-root relative flex flex-col items-center",
+        className,
+      )}
+    >
       {/* ── Threshold SVG filter (hidden) ─────────────────────────── */}
       <svg
         aria-hidden="true"
         focusable="false"
-        style={{ position: "absolute", width: 0, height: 0, pointerEvents: "none" }}>
+        style={{
+          position: "absolute",
+          width: 0,
+          height: 0,
+          pointerEvents: "none",
+        }}
+      >
         <defs>
           <filter id={filterId}>
             <feColorMatrix
               in="SourceGraphic"
               type="matrix"
               values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 25 -9"
-              result="goo" />
+              result="goo"
+            />
             <feComposite in="SourceGraphic" in2="goo" operator="atop" />
           </filter>
         </defs>
       </svg>
       {/* ── Morphing word container ────────────────────────────────── */}
       <div
-        className={cn("morph-text-container relative select-none", textClassName)}
+        className={cn(
+          "morph-text-container relative select-none",
+          textClassName,
+        )}
         style={{
           fontSize,
           fontWeight: 700,
           filter: `url(#${filterId})`,
           fontFamily,
-        }}>
+        }}
+      >
         {/* word rotator */}
         <div
           className="morph-word-rotator relative flex items-center justify-center"
-          style={{ height: "1.2em", minWidth: "14ch" }}>
+          style={{ height: "1.2em", minWidth: "14ch" }}
+        >
           {words.map((word, i) => (
             <span
               key={`${word}-${i}`}
@@ -74,7 +90,8 @@ export function MorphText({
                 animationIterationCount: "infinite",
                 animationFillMode: "both",
                 ...wordStyles[i],
-              }}>
+              }}
+            >
               {word}
             </span>
           ))}
@@ -84,15 +101,20 @@ export function MorphText({
       {subtext && (
         <p
           className={cn(
-            "morph-subtext mt-8 uppercase tracking-[0.2em] text-[#888]",
-            subtextClassName
+            "morph-subtext mt-8 uppercase tracking-[0.28em] text-[#d4af37]",
+            subtextClassName,
           )}
           style={{
-            fontSize: "1.2rem",
+            fontSize: "0.78rem",
             opacity: 0,
             animation: "morph-fade-up 1s ease-out 1s forwards",
             fontFamily,
-          }}>
+            letterSpacing: "0.28em",
+            textTransform: "uppercase",
+            fontWeight: 600,
+            textShadow: "0 0 18px rgba(212, 175, 55, 0.2)",
+          }}
+        >
           {subtext}
         </p>
       )}

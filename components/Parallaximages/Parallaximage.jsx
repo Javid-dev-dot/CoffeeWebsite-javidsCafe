@@ -72,9 +72,10 @@ const ParallaxImage = ({ src, alt, strength = 0.2 }) => {
         ref={imageRef}
         src={src}
         alt={alt}
-        fill // ✅ makes image fit parent div
+        fill
+        sizes="100vw"
         style={{
-          objectFit: "cover", // ✅ clean fit
+          objectFit: "cover",
           transform: "translateY(0) scale(1.05)",
           willChange: "transform",
         }}

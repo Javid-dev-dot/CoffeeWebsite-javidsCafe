@@ -45,7 +45,7 @@ const BrandText = () => {
   return (
     <div
       ref={wrapRef}
-      className="jc-hero-brand absolute bottom-6 left-4 sm:bottom-10 sm:left-10 z-20 max-w-[92vw] sm:max-w-xl"
+      className="jc-hero-brand absolute bottom-8 left-4 sm:bottom-12 sm:left-10 z-20 max-w-[92vw] sm:max-w-[720px]"
     >
       <span className="jc-hero-eyebrow">
         Est. 2024 &mdash; Small Batch Roastery
@@ -57,7 +57,7 @@ const BrandText = () => {
 
       <span ref={lineRef} className="jc-hero-rule" />
 
-      <div className="mt-4 sm:mt-6">
+      <div className="jc-hero-subcopy">
         <RotatingText
           texts={[
             "Slow-roasted, always.",
@@ -79,13 +79,40 @@ const BrandText = () => {
           loop
         />
       </div>
+
+      <div className="jc-hero-meta-row" aria-label="Brand highlights">
+        <span>Single-origin beans</span>
+        <span>Slow roasted</span>
+        <span>Handcrafted daily</span>
+      </div>
+
+      <div className="jc-hero-actions">
+        <a href="/#reserve" className="jc-hero-primary">
+          Reserve a table
+        </a>
+        <a href="#menu" className="jc-hero-secondary">
+          View menu
+        </a>
+      </div>
     </div>
   );
 };
 
+const ScrollIndicator = () => (
+  <motion.div
+    className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex flex-col items-center gap-2"
+    initial={{ opacity: 0 }}
+    animate={{ opacity: 1 }}
+    transition={{ delay: 1.8, duration: 0.8 }}
+  >
+    <span className="jc-scroll-label">Scroll</span>
+    <span className="jc-scroll-line" />
+  </motion.div>
+);
+
 const HeroSection = () => {
   return (
-    <section className="relative w-full h-svh overflow-hidden bg-[#120D0A]">
+    <section className="relative w-full h-svh overflow-hidden bg-[#0a0807]">
       {/* Background parallax video */}
       <ParallaxVideo src="/assets/Video1.mp4" strength={0.3} />
 
@@ -101,6 +128,7 @@ const HeroSection = () => {
       ></motion.div>
 
       <BrandText />
+      <ScrollIndicator />
     </section>
   );
 };

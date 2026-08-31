@@ -13,7 +13,6 @@ export const IMAGES = [
 ];
 
 export const INTRO_END_DELAY_SEC = 0.35 + (IMAGES.length - 1) * 0.25 + 1 + 1;
-console.log(INTRO_END_DELAY_SEC);
 
 const Intro = () => {
   const refs = useRef([]); // image wrapper refs
@@ -83,7 +82,13 @@ const Intro = () => {
             className="absolute inset-0"
             style={{ zIndex: i, clipPath: "inset(0% 0% 100% 0%)" }}
           >
-            <Image src={src} alt="" fill className="object-cover" />
+            <Image
+              src={src}
+              alt=""
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              className="object-cover"
+            />
           </div>
         ))}
         <div

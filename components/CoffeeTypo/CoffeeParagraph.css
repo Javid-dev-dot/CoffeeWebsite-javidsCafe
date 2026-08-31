@@ -1,8 +1,8 @@
 .coffee_paragraph {
-  font-family: "Inter", sans-serif;
-  font-size: 1.35rem;
+  font-family: var(--font-body, "Cormorant Garamond", serif);
+  font-size: clamp(1.05rem, 2.2vw, 1.45rem);
   line-height: 1.7;
-  color: #c0a080;
+  color: #c4b5a2;
   text-align: center;
   max-width: 42rem;
   margin: 1.5rem auto;

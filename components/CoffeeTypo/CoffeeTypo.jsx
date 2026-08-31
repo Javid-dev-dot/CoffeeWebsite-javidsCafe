@@ -11,6 +11,7 @@ function CoffeeTypo() {
         cursorColor="#6f4e37"
         cursorColorOnTarget="#c0a080"
         targetSelector=".coffee-section, .coffee-target, .coffee_paragraph"
+        hideDefaultCursor={false}
       />
       <div className="coffee-section relative overflow-hidden">
         {/* Hero intro */}
