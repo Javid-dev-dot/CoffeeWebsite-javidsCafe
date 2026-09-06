@@ -10,10 +10,14 @@
 }
 
 .journey-section::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(201, 162, 39, 0.04) 0%, transparent 70%);
+  background: radial-gradient(
+    ellipse 80% 50% at 50% 0%,
+    rgba(201, 162, 39, 0.04) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
@@ -45,7 +49,7 @@
   color: #f3e9d8;
   letter-spacing: -0.03em;
   line-height: 1.05;
-  font-family: 'Fraunces', 'Georgia', serif;
+  font-family: "Fraunces", "Georgia", serif;
   margin-bottom: 16px;
 }
 
@@ -144,7 +148,9 @@
   height: 18px;
   border-radius: 50%;
   background: #c9a227;
-  box-shadow: 0 0 0 4px rgba(201, 162, 39, 0.2), 0 0 20px rgba(201, 162, 39, 0.4);
+  box-shadow:
+    0 0 0 4px rgba(201, 162, 39, 0.2),
+    0 0 20px rgba(201, 162, 39, 0.4);
   position: relative;
   z-index: 3;
 }
@@ -161,12 +167,14 @@
 .journey-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(201, 162, 39, 0.12);
-  border-radius: 20px;
+  border-radius: 14px;
   padding: clamp(24px, 3vw, 40px);
   position: relative;
   backdrop-filter: blur(10px);
   overflow: hidden;
-  transition: border-color 0.4s ease, background 0.4s ease;
+  transition:
+    border-color 0.4s ease,
+    background 0.4s ease;
 }
 
 .journey-card:hover {
@@ -175,13 +183,18 @@
 }
 
 .journey-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(201, 162, 39, 0.5), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(201, 162, 39, 0.5),
+    transparent
+  );
 }
 
 .journey-card__icon-badge {
@@ -222,7 +235,7 @@
   letter-spacing: -0.02em;
   line-height: 1.2;
   margin-bottom: 14px;
-  font-family: 'Fraunces', 'Georgia', serif;
+  font-family: "Fraunces", "Georgia", serif;
 }
 
 .journey-card__body {
@@ -242,7 +255,7 @@
 /* Image */
 .journey-image-wrap {
   position: relative;
-  border-radius: 20px;
+  border-radius: 14px;
   overflow: hidden;
   aspect-ratio: 4 / 3;
 }
@@ -281,7 +294,8 @@
     display: flex;
     flex-direction: column;
     padding-left: 64px;
-    gap: 20px;
+    gap: 16px;
+    margin-bottom: 64px;
   }
 
   .journey-spine-dot {
@@ -299,7 +313,7 @@
   .journey-row--right .journey-image-wrap,
   .journey-row--left .journey-image-wrap {
     order: 1;
-    height: 240px;
+    height: clamp(190px, 48vw, 280px);
   }
 
   .journey-image-inner {
@@ -309,7 +323,23 @@
 }
 
 @media (max-width: 480px) {
+  .journey-section {
+    padding: 72px 0 84px;
+  }
+
+  .journey-header {
+    margin-bottom: 56px;
+  }
+
+  .journey-steps {
+    padding: 0 16px 0 52px;
+  }
+
   .journey-image-wrap {
     aspect-ratio: 16/9;
+  }
+
+  .journey-card {
+    padding: 22px 20px;
   }
 }

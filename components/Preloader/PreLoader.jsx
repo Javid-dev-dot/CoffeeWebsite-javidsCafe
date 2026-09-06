@@ -45,6 +45,7 @@ export default function Preloader({ onComplete }) {
       });
 
       const counter = { value: 0 };
+      const hero = document.querySelector(".hero");
 
       tl.addLabel("fill", "+=0.5")
         // Cup fills up like it's being poured
@@ -93,9 +94,11 @@ export default function Preloader({ onComplete }) {
           rightRef.current,
           { x: "100%", duration: 1.2, ease: "power4.inOut" },
           "<",
-        )
-        // Hero scales in as the panels clear
-        .to(".hero", { scale: 1, duration: 1.2, ease: "power3.out" }, "-=0.7");
+        );
+      if (hero) {
+        // Home hero scales in as the panels clear.
+        tl.to(hero, { scale: 1, duration: 1.2, ease: "power3.out" }, "-=0.7");
+      }
     });
 
     return () => ctx.revert();

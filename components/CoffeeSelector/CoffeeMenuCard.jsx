@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useMemo, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import {
@@ -298,7 +299,9 @@ export default function CoffeeMenuCard() {
       const newIndex = coffeeOptions.findIndex(
         (item) => item.id === filteredOptions[0]?.id,
       );
-      if (newIndex !== -1) setIndex(newIndex);
+      if (newIndex !== -1) {
+        queueMicrotask(() => setIndex(newIndex));
+      }
     }
   }, [activeTab, filteredOptions, selected.id]);
 
@@ -489,7 +492,7 @@ export default function CoffeeMenuCard() {
   };
 
   return (
-    <section className="reserve-section" ref={sectionRef}>
+    <section className="reserve-section" id="reserve" ref={sectionRef}>
       {/* Background Atmosphere */}
       <div className="reserve-noise" aria-hidden="true" />
       <div
@@ -525,7 +528,7 @@ export default function CoffeeMenuCard() {
 
         <h1 className="reserve-title">Artisanal Coffee Selector</h1>
         <p className="reserve-subtitle">
-          Select from our master roaster's single-origin harvests & precision
+          Select from our master roaster&apos;s single-origin harvests &amp; precision
           pulls
         </p>
 
@@ -640,10 +643,13 @@ export default function CoffeeMenuCard() {
                     <div className="steam-ray steam-3" />
                   </div>
 
-                  <img
+                  <Image
                     src={selected.img}
                     alt={selected.name}
                     className="coffee-image"
+                    width={216}
+                    height={216}
+                    sizes="216px"
                   />
 
                   {/* Pedestal Base Drop Shadow & Ring */}

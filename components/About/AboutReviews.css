@@ -54,7 +54,7 @@
   color: #f3e9d8;
   letter-spacing: -0.03em;
   line-height: 1.05;
-  font-family: 'Fraunces', 'Georgia', serif;
+  font-family: "Fraunces", "Georgia", serif;
   margin-bottom: 16px;
 }
 
@@ -86,7 +86,7 @@
   font-weight: 800;
   color: #c9a227;
   letter-spacing: -0.02em;
-  font-family: 'Fraunces', 'Georgia', serif;
+  font-family: "Fraunces", "Georgia", serif;
 }
 
 .about-reviews__rating-stars {
@@ -104,7 +104,7 @@
 .about-reviews__cards {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
+  gap: 16px;
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 clamp(20px, 4vw, 60px);
@@ -117,11 +117,14 @@
 .review-card {
   background: rgba(255, 255, 255, 0.025);
   border: 1px solid rgba(201, 162, 39, 0.12);
-  border-radius: 20px;
+  border-radius: 14px;
   padding: clamp(20px, 3vw, 32px);
   position: relative;
   overflow: hidden;
-  transition: border-color 0.4s, background 0.4s, transform 0.4s;
+  transition:
+    border-color 0.4s,
+    background 0.4s,
+    transform 0.4s;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -134,13 +137,18 @@
 }
 
 .review-card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   height: 1px;
-  background: linear-gradient(to right, transparent, rgba(201, 162, 39, 0.4), transparent);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(201, 162, 39, 0.4),
+    transparent
+  );
 }
 
 .review-card__quote-icon {
@@ -179,7 +187,11 @@
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: linear-gradient(135deg, rgba(201,162,39,0.3), rgba(232,122,48,0.3));
+  background: linear-gradient(
+    135deg,
+    rgba(201, 162, 39, 0.3),
+    rgba(232, 122, 48, 0.3)
+  );
   border: 1.5px solid rgba(201, 162, 39, 0.3);
   display: flex;
   align-items: center;
@@ -282,6 +294,14 @@
 }
 
 @media (max-width: 600px) {
+  .about-reviews {
+    padding: 72px 0 84px;
+  }
+
+  .about-reviews__header {
+    margin-bottom: 44px;
+  }
+
   .about-reviews__cards {
     grid-template-columns: 1fr;
   }
@@ -289,5 +309,9 @@
   .about-reviews__cards > *:nth-child(2),
   .about-reviews__cards > *:last-child {
     display: none;
+  }
+
+  .review-card--active {
+    transform: none;
   }
 }

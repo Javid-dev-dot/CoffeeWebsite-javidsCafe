@@ -3,6 +3,7 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { RippleButton } from "@/components/Interactive";
 import "./Navbar.css";
 
 const NAV_LINKS = [
@@ -65,7 +66,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="jc-navbar">
+    <nav className={`jc-navbar ${scrolled ? "scrolled" : ""}`}>
       <div className={`jc-navbar-inner ${scrolled ? "scrolled" : ""}`}>
         <Link href="/" className="jc-nav-brand">
           <CupIcon />
@@ -82,9 +83,14 @@ const Navbar = () => {
             </React.Fragment>
           ))}
           <span className="jc-nav-divider" />
-          <Link href="/#reserve" className="jc-nav-cta">
+          <RippleButton
+            variant="primary"
+            size="sm"
+            onClick={() => (window.location.href = "/#reserve")}
+            className="!py-2 !px-4"
+          >
             Reserve Table
-          </Link>
+          </RippleButton>
         </div>
 
         <button
@@ -130,18 +136,17 @@ const Navbar = () => {
                 {link.label}
               </Link>
             ))}
-            <Link
-              href="/#reserve"
-              onClick={() => setOpen(false)}
-              className="jc-nav-cta"
-              style={{
-                display: "inline-flex",
-                marginTop: "0.5rem",
-                alignSelf: "flex-start",
+            <RippleButton
+              variant="primary"
+              size="sm"
+              onClick={() => {
+                setOpen(false);
+                window.location.href = "/#reserve";
               }}
+              className="mt-4"
             >
               Reserve Table
-            </Link>
+            </RippleButton>
           </motion.div>
         )}
       </AnimatePresence>

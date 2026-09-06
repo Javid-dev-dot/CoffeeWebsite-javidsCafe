@@ -29,21 +29,12 @@ export const metadata = {
     description: "Freshly brewed coffee and cozy vibes.",
     url: "https://javidscafe.com",
     siteName: "Javid’s Café",
-    images: [
-      {
-        url: "/logo.png",
-        width: 800,
-        height: 600,
-        alt: "Javid’s Café Logo",
-      },
-    ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title: "Javid’s Café",
     description: "Freshly brewed coffee and cozy vibes.",
-    images: ["/logo.png"],
   },
 };
 

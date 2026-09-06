@@ -16,7 +16,7 @@ export default function AppShell({ children }) {
     const seen = sessionStorage.getItem(PRELOADER_KEY);
 
     if (seen) {
-      setShowPreloader(false);
+      queueMicrotask(() => setShowPreloader(false));
       document.body.classList.add("preloader-done");
     } else {
       document.body.classList.add("preloader-active");
@@ -35,7 +35,6 @@ export default function AppShell({ children }) {
       <TransitionWrapper>
         <Navbar />
         {children}
-       
       </TransitionWrapper>
 
       {showPreloader && <Preloader onComplete={handlePreloaderComplete} />}

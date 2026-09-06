@@ -26,7 +26,7 @@
    ========================================================================== */
 .reserve-section {
   position: relative;
-  min-height: 100vh;
+  min-height: min(980px, 100svh);
   padding: 5rem 1.5rem 6rem;
   background: radial-gradient(
     circle at 50% 10%,
@@ -37,6 +37,7 @@
   font-family: var(--font-body);
   overflow: hidden;
   isolation: isolate;
+  scroll-margin-top: 4.5rem;
 }
 
 .reserve-noise {
@@ -75,7 +76,9 @@
   background: rgba(22, 17, 12, 0.92);
   border: 1px solid var(--gold);
   border-radius: 999px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(212, 175, 55, 0.2);
+  box-shadow:
+    0 10px 30px rgba(0, 0, 0, 0.6),
+    0 0 20px rgba(212, 175, 55, 0.2);
   backdrop-filter: blur(16px);
   color: var(--cream);
   font-family: var(--font-sans);
@@ -208,6 +211,7 @@
 .reserve-body {
   position: relative;
   z-index: 2;
+  width: min(1200px, 100%);
   max-width: 1200px;
   margin: 0 auto;
   display: grid;
@@ -228,6 +232,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 760px;
   padding: 2.5rem 2rem 2rem;
   border: 1px solid var(--panel-border);
   border-radius: 16px;
@@ -236,7 +241,9 @@
     rgba(32, 24, 18, 0.65) 0%,
     rgba(14, 10, 7, 0.85) 100%
   );
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.08);
+  box-shadow:
+    0 30px 60px rgba(0, 0, 0, 0.6),
+    inset 0 1px 1px rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(20px);
   transform-style: preserve-3d;
   transition: border-color 0.4s ease;
@@ -314,7 +321,9 @@
   align-items: center;
   justify-content: center;
   gap: 2px;
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  transition:
+    border-color 0.4s ease,
+    box-shadow 0.4s ease;
 }
 .laurel-icon {
   width: 20px;
@@ -382,7 +391,11 @@
 .steam-ray {
   width: 4px;
   height: 40px;
-  background: linear-gradient(0deg, rgba(255,255,255,0.25) 0%, transparent 100%);
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    transparent 100%
+  );
   border-radius: 50%;
   filter: blur(4px);
   animation: steamRise 3s infinite ease-in-out;
@@ -625,13 +638,20 @@
   font-weight: 600;
   letter-spacing: 0.02em;
   cursor: pointer;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 175, 55, 0.25);
-  transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.4),
+    0 0 20px rgba(212, 175, 55, 0.25);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
 }
 
 .btn-reserve-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 175, 55, 0.4);
+  box-shadow:
+    0 14px 30px rgba(0, 0, 0, 0.5),
+    0 0 30px rgba(212, 175, 55, 0.4);
   filter: brightness(1.08);
 }
 
@@ -779,7 +799,9 @@
   width: 1rem;
   height: 1rem;
   color: var(--muted-dark);
-  transition: color 0.25s ease, transform 0.25s ease;
+  transition:
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 .row-arrow.active,
@@ -844,11 +866,17 @@
   position: relative;
   width: 100%;
   max-width: 560px;
-  background: linear-gradient(180deg, rgba(28, 21, 16, 0.95), rgba(16, 12, 9, 0.98));
+  background: linear-gradient(
+    180deg,
+    rgba(28, 21, 16, 0.95),
+    rgba(16, 12, 9, 0.98)
+  );
   border: 1px solid var(--gold);
   border-radius: 20px;
   padding: 2.25rem 2rem 2rem;
-  box-shadow: 0 30px 70px rgba(0, 0, 0, 0.8), 0 0 40px rgba(212, 175, 55, 0.2);
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.8),
+    0 0 40px rgba(212, 175, 55, 0.2);
   color: var(--cream);
   max-height: 90vh;
   overflow-y: auto;
@@ -868,7 +896,9 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  transition: color 0.2s, background 0.2s;
+  transition:
+    color 0.2s,
+    background 0.2s;
 }
 .modal-close-btn:hover {
   color: var(--cream);
@@ -917,7 +947,8 @@
   align-items: center;
   gap: 0.25rem;
 }
-.spec-icon, .spec-label-icon {
+.spec-icon,
+.spec-label-icon {
   width: 1rem;
   height: 1rem;
   color: var(--gold);
@@ -1022,7 +1053,9 @@
   font-weight: 600;
   cursor: pointer;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
-  transition: filter 0.2s, transform 0.2s;
+  transition:
+    filter 0.2s,
+    transform 0.2s;
 }
 .btn-modal-confirm:hover {
   filter: brightness(1.1);
@@ -1038,13 +1071,16 @@
   }
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 900px) {
   .reserve-body {
     grid-template-columns: 1fr;
     gap: 3rem;
   }
   .reserve-section {
     padding: 4rem 1.25rem 5rem;
+  }
+  .pedestal-card {
+    min-height: 0;
   }
   .coffee-image {
     width: 12rem;
@@ -1068,6 +1104,11 @@
     justify-content: flex-start;
     flex-wrap: nowrap;
     -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+  }
+
+  .reserve-tabs::-webkit-scrollbar {
+    display: none;
   }
   .tab-btn {
     padding: 0.55rem 1rem;
@@ -1075,6 +1116,7 @@
     white-space: nowrap;
   }
   .pedestal-card {
+    min-height: 0;
     padding: 2rem 1.25rem 1.6rem;
   }
   .coffee-image {

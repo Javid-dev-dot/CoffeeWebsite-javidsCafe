@@ -4,6 +4,31 @@
   overflow-x: hidden;
 }
 
-.about-page main {
-  position: relative;
+.about-section {
+  border-top: 1px solid rgba(212, 175, 55, 0.08);
+  background: #0c0704;
+}
+
+.about-section--stats {
+  padding: 0 clamp(1rem, 5vw, 4rem);
+}
+
+.about-section--stats > div {
+  width: min(1100px, 100%);
+  margin-inline: auto;
+}
+
+.about-page > section:not(:first-child) {
+  border-top: 1px solid rgba(212, 175, 55, 0.08);
+}
+
+.about-page h2,
+.about-page h3 {
+  text-wrap: balance;
+}
+
+@media (max-width: 640px) {
+  .about-section--stats {
+    padding-inline: 1rem;
+  }
 }

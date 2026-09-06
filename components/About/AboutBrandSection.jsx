@@ -96,7 +96,7 @@ export default function AboutBrandSection() {
     <section ref={sectionRef} className="about-brand-section" id="brand">
       {/* Giant BG text */}
       <div className="brand-bg-text-wrap" aria-hidden>
-        <span className="brand-bg-text">JAVID'S CAFÉ</span>
+        <span className="brand-bg-text">JAVID&apos;S CAFÉ</span>
       </div>
 
       {/* Background glow */}

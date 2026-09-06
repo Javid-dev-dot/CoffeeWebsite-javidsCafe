@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: clamp(40px, 6vw, 80px);
+  gap: clamp(32px, 5vw, 64px);
 }
 
 /* BG Text */
@@ -33,7 +33,7 @@
   color: transparent;
   -webkit-text-stroke: 1px rgba(201, 162, 39, 0.06);
   user-select: none;
-  font-family: 'Fraunces', 'Georgia', serif;
+  font-family: "Fraunces", "Georgia", serif;
 }
 
 /* BG glow */
@@ -67,7 +67,7 @@
   z-index: 5;
   text-align: center;
   padding: 0 clamp(20px, 5vw, 80px);
-  max-width: 1000px;
+  max-width: 900px;
   width: 100%;
 }
 
@@ -81,7 +81,9 @@
 }
 
 @keyframes rotateBadge {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 .about-brand__badge-svg {
@@ -115,7 +117,7 @@
   font-weight: 800;
   letter-spacing: -0.04em;
   line-height: 1;
-  font-family: 'Fraunces', 'Georgia', serif;
+  font-family: "Fraunces", "Georgia", serif;
 }
 
 .brand-text-word--brand {
@@ -138,7 +140,7 @@
 }
 
 .brand-text-word--highlight::after {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -195,7 +197,9 @@
 }
 
 @keyframes rotateSlow {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Pillars */
@@ -237,6 +241,15 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .about-brand-section {
+    padding: 72px 0 84px;
+    gap: 36px;
+  }
+
+  .about-brand__content {
+    padding-inline: 20px;
+  }
+
   .brand-bg-text {
     font-size: clamp(60px, 20vw, 100px);
   }

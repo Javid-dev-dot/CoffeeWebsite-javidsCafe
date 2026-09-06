@@ -32,12 +32,12 @@
   position: absolute;
   inset: 0;
   z-index: 1;
-  opacity: 0.6;
+  opacity: 0.82;
   background: linear-gradient(
     180deg,
-    rgba(13, 9, 6, 0.75) 0%,
-    rgba(13, 9, 6, 0.45) 40%,
-    rgba(13, 9, 6, 0.85) 100%
+    rgba(13, 9, 6, 0.9) 0%,
+    rgba(13, 9, 6, 0.62) 38%,
+    rgba(13, 9, 6, 0.94) 100%
   );
 }
 
@@ -150,8 +150,15 @@
   flex-direction: column;
   align-items: center;
   text-align: center;
-  max-width: 900px;
-  padding: 0 1.5rem;
+  max-width: 760px;
+  padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 5vw, 3.5rem);
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 1.25rem;
+  background: rgba(13, 9, 6, 0.34);
+  box-shadow:
+    0 24px 80px rgba(0, 0, 0, 0.28),
+    inset 0 1px 0 rgba(255, 255, 255, 0.04);
+  backdrop-filter: blur(10px);
   perspective: 800px;
 }
 
@@ -172,7 +179,7 @@
   font-size: clamp(3rem, 9vw, 7.5rem);
   line-height: 0.98;
   letter-spacing: -0.01em;
-  margin: 0 0 1.4rem 0;
+  margin: 0 0 1.1rem 0;
   background: linear-gradient(135deg, #fdf6ea 0%, #f3ead9 45%, #d4af37 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -254,6 +261,11 @@
 
   .origin-hero__subtitle {
     max-width: 34ch;
+  }
+
+  .origin-hero__content {
+    width: calc(100% - 2rem);
+    padding: 2rem 1.15rem;
   }
 }
 

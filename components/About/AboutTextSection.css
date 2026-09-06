@@ -7,7 +7,7 @@
   background: #1a0e0a;
   padding: clamp(80px, 12vw, 160px) 0 0;
   overflow: hidden;
-  min-height: 80vh;
+  min-height: min(760px, 80vh);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -44,19 +44,43 @@
 
 /* Steam path animations */
 @keyframes steamRise1 {
-  0% { stroke-dashoffset: 200; opacity: 0.4; }
-  50% { opacity: 0.9; }
-  100% { stroke-dashoffset: 0; opacity: 0.1; }
+  0% {
+    stroke-dashoffset: 200;
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.9;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.1;
+  }
 }
 @keyframes steamRise2 {
-  0% { stroke-dashoffset: 240; opacity: 0.3; }
-  50% { opacity: 1; }
-  100% { stroke-dashoffset: 0; opacity: 0.1; }
+  0% {
+    stroke-dashoffset: 240;
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.1;
+  }
 }
 @keyframes steamRise3 {
-  0% { stroke-dashoffset: 210; opacity: 0.35; }
-  50% { opacity: 0.8; }
-  100% { stroke-dashoffset: 0; opacity: 0.1; }
+  0% {
+    stroke-dashoffset: 210;
+    opacity: 0.35;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    opacity: 0.1;
+  }
 }
 
 .steam-path {
@@ -92,7 +116,9 @@
 }
 
 @keyframes rotateSlow {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* Main content */
@@ -100,7 +126,7 @@
   position: relative;
   z-index: 5;
   text-align: center;
-  max-width: 1100px;
+  max-width: 980px;
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 80px);
   width: 100%;
@@ -138,7 +164,7 @@
   display: inline-block;
   cursor: default;
   transition: color 0.3s ease;
-  font-family: 'Fraunces', 'Georgia', serif;
+  font-family: "Fraunces", "Georgia", serif;
 }
 
 .about-text-word--gold {
@@ -181,9 +207,11 @@
   gap: 6px;
   padding: 20px 28px;
   border: 1px solid rgba(201, 162, 39, 0.15);
-  border-radius: 16px;
+  border-radius: 10px;
   background: rgba(255, 255, 255, 0.025);
-  transition: border-color 0.3s, background 0.3s;
+  transition:
+    border-color 0.3s,
+    background 0.3s;
   cursor: default;
   min-width: 110px;
 }
@@ -198,7 +226,7 @@
   font-weight: 800;
   color: #c9a227;
   letter-spacing: -0.03em;
-  font-family: 'Fraunces', 'Georgia', serif;
+  font-family: "Fraunces", "Georgia", serif;
 }
 
 .about-text-stat__label {
@@ -224,6 +252,16 @@
 
 /* Responsive */
 @media (max-width: 768px) {
+  .about-text-section {
+    min-height: 680px;
+    padding-top: 72px;
+  }
+
+  .about-text-words {
+    max-width: 360px;
+    margin-inline: auto;
+  }
+
   .about-text-svg-container {
     opacity: 0.3;
     right: 8px;

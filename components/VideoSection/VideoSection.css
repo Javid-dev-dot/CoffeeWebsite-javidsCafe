@@ -5,7 +5,8 @@
 .javids-video-section {
   position: relative;
   width: 100%;
-  height: 100vh;
+  min-height: 760px;
+  height: 100svh;
   background-color: #0a0807;
   color: #f5efe6;
   overflow: hidden;
@@ -62,7 +63,7 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 80px;
+  height: 72px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -738,7 +739,7 @@
 @media (max-width: 1024px) {
   .javids-video-section {
     height: auto;
-    min-height: 100vh;
+    min-height: 720px;
     padding-bottom: 90px;
   }
 
@@ -773,7 +774,8 @@
 
 @media (max-width: 768px) {
   .javids-brand-header {
-    padding: 0 1.2rem;
+    height: 64px;
+    padding: 0 1rem;
     gap: 0.75rem;
   }
 
@@ -793,7 +795,7 @@
 
   .horizontal-card {
     padding: 1.4rem;
-    border-radius: 20px;
+    border-radius: 14px;
   }
 
   .card-title {

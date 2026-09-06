@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 import React, {
   useRef,
   useState,
@@ -553,10 +555,13 @@ export default function VideoSection() {
                         ))}
                       </div>
                       <div className="drink-preview-box">
-                        <img
+                        <Image
                           src={slide.drinks[activeDrink].img}
                           alt={slide.drinks[activeDrink].name}
                           className="drink-img"
+                          width={44}
+                          height={44}
+                          sizes="44px"
                         />
                         <div className="drink-info">
                           <span className="drink-name">
@@ -666,7 +671,7 @@ export default function VideoSection() {
                 className="modal-video-player"
               />
               <div className="modal-caption">
-                <h3>Javid's Cafe HD Video Stream</h3>
+                <h3>Javid&apos;s Cafe HD Video Stream</h3>
                 <p>Artisanal Coffee Crafting & Extraction</p>
               </div>
             </motion.div>

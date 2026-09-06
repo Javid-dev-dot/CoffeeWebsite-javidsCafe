@@ -1,5 +1,6 @@
 "use client";
 import ParallaxVideo from "@/components/Parallaximages/Parallaxvideo";
+import Link from "next/link";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -87,9 +88,9 @@ const BrandText = () => {
       </div>
 
       <div className="jc-hero-actions">
-        <a href="/#reserve" className="jc-hero-primary">
+        <Link href="/#reserve" className="jc-hero-primary">
           Reserve a table
-        </a>
+        </Link>
         <a href="#menu" className="jc-hero-secondary">
           View menu
         </a>

@@ -26,11 +26,11 @@
 .javids-cafe-section {
   position: relative;
   width: 100%;
-  min-height: 100vh;
+  min-height: min(900px, 100vh);
   background-color: var(--espresso-bg);
   color: var(--text-primary);
   font-family: var(--font-sans);
-  padding: 4rem 1.5rem;
+  padding: clamp(4rem, 7vw, 6.5rem) 1.5rem;
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -238,7 +238,7 @@
   position: relative;
   background: var(--espresso-card-bg);
   border: 1px solid var(--border-glass);
-  border-radius: 20px;
+  border-radius: 14px;
   padding: 1.5rem 1rem;
   text-align: center;
   backdrop-filter: blur(16px);
@@ -630,7 +630,8 @@
 
 @media (max-width: 768px) {
   .javids-cafe-section {
-    padding: 2.5rem 1rem;
+    min-height: auto;
+    padding: 4rem 1rem 5rem;
   }
 
   .route-selector {
@@ -665,6 +666,7 @@
 
   .detail-glass-card {
     padding: 1.5rem;
+    border-radius: 14px;
   }
 
   .node-icon-wrapper {
