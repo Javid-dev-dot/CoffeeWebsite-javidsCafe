@@ -13,7 +13,8 @@
 }
 
 .coffee-target {
-  display: inline-block; /* required for GSAP transforms */
+  display: block;
   opacity: 1;
   will-change: transform, opacity;
+  white-space: nowrap;
 }

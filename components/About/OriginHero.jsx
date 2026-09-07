@@ -149,7 +149,7 @@ export default function OriginHero() {
           alt="Javid's Café — the roastery and dining room"
           strength={0.15}
           fill
-          sizes="100vw"
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 60vw"
         />
       </div>
 

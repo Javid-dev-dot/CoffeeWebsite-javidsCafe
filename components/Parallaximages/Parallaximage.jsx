@@ -73,7 +73,7 @@ const ParallaxImage = ({ src, alt, strength = 0.2 }) => {
         src={src}
         alt={alt}
         fill
-        sizes="100vw"
+        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 70vw"
         style={{
           objectFit: "cover",
           transform: "translateY(0) scale(1.05)",

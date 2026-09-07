@@ -70,8 +70,8 @@
   top: clamp(1.5rem, 4vw, 3rem);
   right: clamp(1.5rem, 4vw, 3rem);
   z-index: 4;
-  width: clamp(76px, 9vw, 110px);
-  height: clamp(76px, 9vw, 110px);
+  width: clamp(70px, 8vw, 100px);
+  height: clamp(70px, 8vw, 100px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -154,11 +154,11 @@
   padding: clamp(2rem, 5vw, 3.5rem) clamp(1.25rem, 5vw, 3.5rem);
   border: 1px solid rgba(212, 175, 55, 0.16);
   border-radius: 1.25rem;
-  background: rgba(13, 9, 6, 0.34);
+  background: rgba(13, 9, 6, 0.82);
   box-shadow:
     0 24px 80px rgba(0, 0, 0, 0.28),
     inset 0 1px 0 rgba(255, 255, 255, 0.04);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(16px);
   perspective: 800px;
 }
 
@@ -176,10 +176,18 @@
   font-family: "Fraunces", Georgia, serif;
   font-weight: 600;
   font-optical-sizing: auto;
-  font-size: clamp(3rem, 9vw, 7.5rem);
-  line-height: 0.98;
+  font-size: clamp(2.5rem, 8vw, 6.5rem);
+  line-height: 1.05;
   letter-spacing: -0.01em;
   margin: 0 0 1.1rem 0;
+  background: linear-gradient(135deg, #fdf6ea 0%, #f3ead9 45%, #d4af37 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  white-space: nowrap;
+}
+
+.origin-hero__title .char {
   background: linear-gradient(135deg, #fdf6ea 0%, #f3ead9 45%, #d4af37 100%);
   background-clip: text;
   -webkit-background-clip: text;
@@ -249,10 +257,14 @@
   }
 
   .origin-hero__badge {
-    top: 1.1rem;
-    right: 1.1rem;
-    width: 64px;
-    height: 64px;
+    top: 1rem;
+    right: 1rem;
+    width: 60px;
+    height: 60px;
+  }
+
+  .origin-hero__title {
+    white-space: normal;
   }
 
   .origin-hero__subtitle-break {

@@ -25,11 +25,11 @@ const CoffeeParagraph = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-screen relative px-8 py-6 mb-20">
+    <div className="flex flex-col w-full relative px-8 py-6 mb-20">
       <p className="coffee_paragraph max-w-2xl mx-auto my-6 leading-relaxed text-center">
-        Coffee is more than a drink — it’s a ritual, a pause, a spark of energy.
-        Every cup tells a story of warmth, aroma, and connection. Let each sip
-        inspire your day.
+        Coffee is more than a drink — it&apos;s a ritual, a pause, a spark of
+        energy. Every cup tells a story of warmth, aroma, and connection. Let
+        each sip inspire your day.
       </p>
     </div>
   );

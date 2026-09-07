@@ -148,6 +148,13 @@ export default function SignatureFooter() {
   };
 
   const scrollToTop = () => {
+    const lenis = document.documentElement.lenis;
+
+    if (lenis) {
+      lenis.scrollTo(0, { duration: 1.2 });
+      return;
+    }
+
     window.scrollTo({ top: 0, behavior: "smooth" });
   };
 

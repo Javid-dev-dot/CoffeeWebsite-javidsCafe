@@ -231,7 +231,7 @@ const SLIDES_DATA = [
     title: "Javid's Brew Collection",
     subtitle: "Curated Artisanal Espresso & Cold Extractions",
     video: "/assets/reelcoffee.mp4",
-    poster: "/assets/Coffejavid.png",
+    poster: "/assets/LandingCafe.jpg",
     iconKey: "pitcher",
     category: "Menu Atelier",
     notes:
@@ -271,7 +271,7 @@ const SLIDES_DATA = [
     title: "The Night Atmosphere",
     subtitle: "Nocturnal Tasting Room & Jazz Lounge",
     video: "/assets/twincoffee.mp4",
-    poster: "/assets/night coffee shop.jpg",
+    poster: "/assets/night.jpg",
     iconKey: "cup",
     category: "Experience",
     notes:
@@ -305,10 +305,12 @@ export default function VideoSection() {
   const trackRef = useRef(null);
   const cardRefs = useRef([]);
 
-  // Calculate dynamic SVG connecting line paths between horizontal slide cards
   const calculateSVGPaths = useCallback(() => {
-    if (!trackRef.current) return;
+    if (typeof window === "undefined" || !trackRef.current) return;
+    
     const trackRect = trackRef.current.getBoundingClientRect();
+    if (!trackRect.width || !trackRect.height) return;
+    
     const newPaths = [];
 
     for (let i = 0; i < SLIDES_DATA.length - 1; i++) {
@@ -318,6 +320,8 @@ export default function VideoSection() {
       if (el1 && el2) {
         const r1 = el1.getBoundingClientRect();
         const r2 = el2.getBoundingClientRect();
+
+        if (!r1.width || !r2.width) continue;
 
         const x1 = r1.left + r1.width / 2 - trackRect.left;
         const y1 = r1.top + r1.height / 2 - trackRect.top;
@@ -356,10 +360,15 @@ export default function VideoSection() {
   );
 
   useLayoutEffect(() => {
-    calculateSVGPaths();
+    if (typeof window === "undefined") return;
+    
+    const timer = setTimeout(() => calculateSVGPaths(), 100);
     const handleResize = () => calculateSVGPaths();
     window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      clearTimeout(timer);
+      window.removeEventListener("resize", handleResize);
+    };
   }, [calculateSVGPaths]);
 
   // Jump to specific slide index smoothly
@@ -545,13 +554,15 @@ export default function VideoSection() {
                     <div className="drinks-showcase">
                       <div className="drink-tabs">
                         {slide.drinks.map((d, dIdx) => (
-                          <button
+                          <motion.button
                             key={d.name}
                             className={`drink-tab-btn ${activeDrink === dIdx ? "active" : ""}`}
                             onClick={() => setActiveDrink(dIdx)}
+                            whileHover={{ scale: 1.05, y: -2 }}
+                            whileTap={{ scale: 0.95 }}
                           >
                             {d.name}
-                          </button>
+                          </motion.button>
                         ))}
                       </div>
                       <div className="drink-preview-box">

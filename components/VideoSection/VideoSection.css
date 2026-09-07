@@ -6,7 +6,7 @@
   position: relative;
   width: 100%;
   min-height: 760px;
-  height: 100svh;
+  height: auto;
   background-color: #0a0807;
   color: #f5efe6;
   overflow: hidden;

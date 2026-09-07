@@ -35,7 +35,7 @@
   );
   color: var(--cream);
   font-family: var(--font-body);
-  overflow: hidden;
+  overflow: clip;
   isolation: isolate;
   scroll-margin-top: 4.5rem;
 }

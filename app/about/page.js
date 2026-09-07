@@ -212,9 +212,9 @@ const About = () => {
         </div>
 
         <CTASection />
-      </main>
 
-      <SignatureFooter />
+        <SignatureFooter />
+      </main>
     </>
   );
 };

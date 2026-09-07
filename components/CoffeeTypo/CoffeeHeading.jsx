@@ -54,8 +54,8 @@ const CoffeeHeading = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-screen relative px-8 py-6 mt-48">
-      <h2 className="coffee_title text-[8vw] leading-[0.9] text-center grid gap-8 font-extrabold">
+    <div className="flex flex-col w-full relative px-8 py-6 mt-48">
+      <h2 className="coffee_title text-[clamp(2.5rem,8vw,9rem)] leading-[0.9] text-center grid gap-4 font-extrabold mx-auto max-w-[95vw]">
         <span className="uppercase coffee-target">BREW HORIZON</span>
         <span className="uppercase coffee-target">SAVOR THE MOMENT</span>
         <span className="uppercase coffee-target">AWAKEN YOUR SENSES</span>

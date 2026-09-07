@@ -1,5 +1,7 @@
 "use client";
 import React, { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Carouselusage from "@/components/ui/Carouselusage";
 import MorphText from "@/components/ui/morph-text";
@@ -21,6 +23,8 @@ import {
   RippleButton,
   ScrollReveal,
 } from "@/components/Interactive";
+
+gsap.registerPlugin(ScrollTrigger);
 const AnimatedHero = () => {
   return (
     <div>
@@ -98,10 +102,7 @@ const EnhancedCarouselSection = () => {
 const EnhancedProductSection = () => {
   return (
     <ScrollReveal>
-      <section
-        id="menu"
-        className="home-menu-section w-full bg-[#0a0807]"
-      >
+      <section id="menu" className="home-menu-section w-full bg-[#0a0807]">
         <CoffeeCard />
       </section>
     </ScrollReveal>
@@ -146,6 +147,56 @@ const FinalTextSection = () => {
 };
 
 const CTASection = () => {
+  const panelRef = useRef(null);
+
+  useEffect(() => {
+    const panel = panelRef.current;
+    if (
+      !panel ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+      return;
+    }
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        panel,
+        { opacity: 0.35, y: 40, rotateX: 4 },
+        {
+          opacity: 1,
+          y: 0,
+          rotateX: 0,
+          duration: 1,
+          ease: "power3.out",
+          scrollTrigger: {
+            trigger: panel,
+            start: "top 86%",
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
+
+      gsap.fromTo(
+        panel.querySelectorAll("[data-cta-reveal]"),
+        { opacity: 0, y: 18 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: panel,
+            start: "top 78%",
+            toggleActions: "play none none reverse",
+          },
+        },
+      );
+    }, panel);
+
+    return () => ctx.revert();
+  }, []);
+
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
@@ -155,17 +206,22 @@ const CTASection = () => {
 
   return (
     <section className="home-cta-section py-16 w-full bg-[#0a0807] px-4">
-      <div className="home-cta-panel max-w-4xl mx-auto text-center">
-        <ScrollReveal>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#f5efe6] mb-6">
+      <div ref={panelRef} className="home-cta-panel max-w-4xl mx-auto">
+        <div className="home-cta-copy">
+          <span className="home-cta-kicker" data-cta-reveal>
+            Your table is waiting
+          </span>
+          <h2 data-cta-reveal>
             Ready to Experience
-            <span className="text-[#d4af37]"> Javid&apos;s Café</span>?
+            <span> Javid&apos;s Café?</span>
           </h2>
-          <p className="text-[#a39482] text-lg mb-8 max-w-2xl mx-auto">
+        </div>
+        <div className="home-cta-actions" data-cta-reveal>
+          <p>
             Join us for an unforgettable coffee experience. Reserve your table
             today and discover the art of slow coffee.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="home-cta-buttons">
             <RippleButton
               variant="primary"
               size="lg"
@@ -183,7 +239,7 @@ const CTASection = () => {
               View Our Menu
             </RippleButton>
           </div>
-        </ScrollReveal>
+        </div>
       </div>
     </section>
   );
